@@ -24,6 +24,8 @@ describe('Player and Role', function() {
     expect(testRole.agility).toEqual(2);
     console.log(testRole.agility + " compare " + 2);
 
+
+
   });
 
   it('should test that a player can be made', function() {
@@ -33,6 +35,20 @@ describe('Player and Role', function() {
 
     expect(testPlayer.role).toEqual(testRole);
     console.log(testPlayer.role + " compare " + testRole);
+
+
+    expect(testPlayer.xp).toEqual(0);
+    console.log(testPlayer.xp + " compare " + 0);
+
+    testPlayer.setXP(5);
+
+    expect(testPlayer.xp).toEqual(5);
+    console.log(testPlayer.xp + " compare " + 5);
+
+    testPlayer.setInventory("sword");
+
+    expect(testPlayer.inventory[0]).toEqual("sword");
+    console.log(testPlayer.inventory[0] + " compare " + "sword");
 
   });
 
