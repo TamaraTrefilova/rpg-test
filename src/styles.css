@@ -1,3 +1,51 @@
 .jumbotron {
   text-align: center;
 }
+
+#userPlayer, #journeyStart {
+  text-align: center;
+}
+
+#journeyStart, #commandLegend, #playerCommandDiv {
+  display: none;
+}
+
+#journeyStart {
+  margin-bottom: 100px;
+}
+
+#commandLegend {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+#playerCommand {
+  text-align: center;
+}
+
+#userName, #roleSelect, #playerCommandDiv {
+  margin-bottom: 10px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align-last: center;
+  text-align: center;
+}
+
+#commandCheck {
+  margin-top: 15px;
+}
+
+.roleStyle {
+  font-weight: 800;
+}
+
+strong {
+  color: red;
+}
+
+label {
+  font-weight: 600;
+}

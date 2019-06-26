@@ -6,7 +6,7 @@ describe('Player and Role', function() {
 
   beforeEach(function() {
     testRole = new Role("fighter", 3, 1, 2);
-    testPlayer = new Player("Knight", testRole);
+    testPlayer = new Player("Knight");
 
   });
 
@@ -33,10 +33,6 @@ describe('Player and Role', function() {
     expect(testPlayer.name).toEqual("Knight");
     console.log(testPlayer.name + " compare " + "Knight");
 
-    expect(testPlayer.role).toEqual(testRole);
-    console.log(testPlayer.role + " compare " + testRole);
-
-
     expect(testPlayer.xp).toEqual(0);
     console.log(testPlayer.xp + " compare " + 0);
 
@@ -49,6 +45,13 @@ describe('Player and Role', function() {
 
     expect(testPlayer.inventory[0]).toEqual("sword");
     console.log(testPlayer.inventory[0] + " compare " + "sword");
+
+    testPlayer.setRole("fighter");
+
+    expect(testPlayer.role).toEqual(new Role("fighter", 3, 1, 2));
+    console.log(testPlayer.role + " compare " + new Role("fighter", 3, 1, 2));
+    expect(testPlayer.role).not.toEqual(new Role("mage", 3, 1, 2));
+    console.log(testPlayer.role + "not equal " + new Role("mage", 1, 3, 2));
 
   });
 

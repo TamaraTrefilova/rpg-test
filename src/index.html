@@ -12,19 +12,43 @@
 
     <form id="userPlayer">
       <label for="userName">Enter your hero's name:</label>
-      <input type="text" id="userName">
-
+      <input id="userName" type="text" class="form-control">
+      <br>
+      <label for="roleSelect">Choose your hero class:</label>
       <select id="roleSelect" class="form-control">
-        <option selected disabled hidden>Choose Your Class</option>
+        <option selected disabled hidden>(click for options)</option>
         <option value="fighter">Fighter</option>
         <option value="mage">Mage</option>
         <option value="archer">Archer</option>
       </select>
+      <br>
+      <!-- <select id="armorSelect" class="form-control">
+        <option selected disabled hidden>Choose Your Armor</option>
+        <option value="sword">Sword</option>
+        <option value="shell">Shell</option>
+        <option value="bow">Bow</option>
+      </select> -->
 
-
-      <button type="submit" name="button">Begin Your Journey</button>
+      <button type="submit" name="button" class="btn btn-dark">Begin Your Journey</button>
 
     </form>
+
+    <div id="commandLegend">
+      <p>Type <strong>LOOK</strong> to observe your surroundings</p>
+      <p>Type <strong>INVENTORY</strong> to check your inventory</p>
+      <p>Type <strong>STATS</strong> to get your current stats</p>
+      <p>Type <strong>FLEE</strong> to run to the next area</p>
+      <p>Type <strong>FIGHT</strong> to battle any enemies in the current area</p>
+      <p>Type <strong>TAKE</strong> then what you want to take to add it to your inventory</p>
+    </div>
+
+    <div id="journeyStart"><span class="heroName"></span> awoke in a dark cave, alone and confused.</div>
+
+    <div id="playerCommandDiv">
+      <input id="playerCommand" type="text" placeholder="(type commands here)" class="form-control">
+      <button id="commandCheck" type="button" class="btn btn-dark">Confirm</button>
+    </div>
+
 
   </div>
 </body>

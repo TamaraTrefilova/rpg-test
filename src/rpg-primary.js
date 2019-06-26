@@ -1,12 +1,15 @@
 export class Player {
-  constructor(name){
-    this.name = name;
+  constructor(){
+    this.name = "";
     // this.role = "";
     this.xp = 0;
     this.inventory = [];
+    this.areaCount = 0;
+    this.currentArea = "";
   }
 
   setRole(selectedRole){
+
     if(selectedRole === "fighter"){
       this.role = new Role("fighter", 3, 1, 2);
     } else if(selectedRole === "mage"){
@@ -16,12 +19,23 @@ export class Player {
     }
   }
 
+
+
+  setArea(map){
+      this.currentArea = map.areaMap[this.areaCount];
+      this.areaCount++;
+  }
+
+
+
   setXP(xpValue){
     this.xp = xpValue;
   }
 
   setInventory(inventoryValue){
-    this.inventory.push(inventoryValue);
+    if(inventoryValue !== ""){
+      this.inventory.push(inventoryValue);
+    }
   }
 
   getItemPower(item){
@@ -33,16 +47,29 @@ export class Player {
   }
 }
 
-// export class InventoryItems {
-//   this.items = [["sword", "strength"], ["sight stone", "agility"], ["book of wisdom", "intelligence"]];
-//
-// }
-
 export class Role {
   constructor(name, strength, intelligence, agility){
     this.name = name;
     this.strength = strength;
     this.intelligence = intelligence;
     this.agility = agility;
+  }
+}
+
+export class AreaMap {
+  constructor(){
+    this.areaMap = [];
+  }
+
+  setAreaMap(area){
+    this.areaMap.push(area);
+  }
+
+}
+
+export class Area {
+  constructor(lookArea, itemsArea){
+    this.lookArea = lookArea;
+    this.itemsArea = itemsArea;
   }
 }
